@@ -1,0 +1,189 @@
+/* Let's highlight canvas boundaries */
+#gjs {
+  /* border: 3px solid #444; */
+  --canvas__frames_margin: 50px;
+}
+
+/* Add padding */
+.gjs-frame-wrapper {
+  padding: 50px;
+}
+
+/* Reset some default styling */
+.gjs-cv-canvas {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.gjs-cv-canvas__frames {
+  /* left: 50%;
+  transform: translateX(calc(-50% - var(--canvas__frames_margin))); */
+  width: calc(100% - 100px);
+  margin: var(--canvas__frames_margin);
+  height: calc(100% - 2 * var(--canvas__frames_margin));
+}
+.gjs-frame {
+  overflow-y: hidden;
+}
+.gjs-block {
+  width: auto;
+  height: auto;
+  min-height: auto;
+}
+
+.gjs-pn-panel {
+  position: unset;
+  padding: 0;
+}
+
+.gjs-pn-buttons {
+  height: 100%;
+}
+
+.gjs-pn-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  margin-right: 0;
+  margin: auto;
+  padding: 0;
+  border-radius: unset;
+  position: relative;
+  width: 100%;
+  min-width: 64px;
+  min-height: 100%;
+  stroke: #e0e0e3;
+}
+
+header .gjs-pn-btn:hover {
+  background-color: rgb(15, 15, 15);
+}
+
+header .gjs-pn-btn:active {
+  @apply bg-dark;
+}
+
+header .gjs-pn-btn.gjs-pn-active {
+  @apply bg-dark bg-opacity-70;
+  box-shadow: unset;
+}
+
+header .gjs-pn-btn.gjs-pn-active:hover,
+.gjs-pn-btn.gjs-pn-active:active {
+  @apply bg-dark;
+}
+
+#blocks-categories-panel .gjs-pn-buttons {
+  @apply overflow-y-scroll flex flex-col;
+}
+
+#blocks-categories-panel .gjs-pn-buttons::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+#blocks-categories-panel .gjs-pn-buttons::-webkit-scrollbar-track {
+  display: none;
+}
+
+/* Handle */
+#blocks-categories-panel .gjs-pn-buttons::-webkit-scrollbar-thumb {
+  @apply bg-grey-light bg-opacity-70 rounded-full;
+}
+
+/* Handle on hover */
+#blocks-categories-panel .gjs-pn-buttons::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-icons;
+}
+
+#blocks-categories-panel .gjs-pn-buttons .gjs-pn-btn {
+  height: fit-content;
+  min-height: unset;
+  justify-content: flex-start;
+  padding: 0.75rem 1rem;
+}
+
+#blocks-categories-panel .gjs-pn-buttons .gjs-pn-btn.gjs-pn-active {
+  background-color: rgba(0, 222, 239, 0.4);
+  /* color: #007078; */
+  color: #363636;
+}
+#blocks-categories-panel .gjs-pn-buttons .gjs-pn-btn:active,
+.gjs-pn-btn:hover {
+  background-color: rgba(0, 222, 239, 0.2);
+  opacity: 70%;
+}
+
+#blocks-categories-panel .gjs-pn-buttons.gjs-pn-btn:active {
+  @apply text-blue-dark bg-opacity-70;
+}
+
+#blocks-categories-panel .gjs-pn-buttons .gjs-pn-btn.gjs-pn-active:hover,
+.gjs-pn-btn.gjs-pn-active:active {
+  @apply text-grey-dark;
+}
+
+#blocks-category-panel .gjs-title {
+  display: none;
+}
+
+#blocks-category-panel .gjs-block-category {
+  border-bottom: unset !important;
+}
+
+#blocks-category-panel .gjs-blocks-c {
+  /* gap: 1.5rem; */
+}
+
+#blocks-category-panel .gjs-block {
+  margin: 0;
+  border: 0;
+  /* @apply shadow-lg text-grey hover:text-blue-dark fill-grey hover:shadow-xl hover:shadow-gray-500 shadow-grey-light; */
+  @apply shadow-none min-h-[135px] cursor-grab active:cursor-grabbing flex flex-col flex-grow justify-center items-center text-grey hover:text-blue-dark hover:bg-grey-lighter;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+}
+
+/* Block Styles */
+#blocks-category-panel .gjs-block .gjs-block__media {
+  width: 90px;
+  flex-grow: 1;
+  object-fit: contain;
+}
+
+#blocks-category-panel .gjs-block .gjs-block-label {
+  @apply text-sm;
+}
+
+.gjs-one-bg {
+  background-color: unset;
+}
+
+.gjs-four-color {
+  color: #00edff;
+  stroke: #00edff;
+  fill: #00edff;
+}
+
+.sidebar-btn {
+  @apply hover:bg-gray-100 hover:cursor-pointer w-full object-contain h-16 flex items-center justify-center;
+}
+
+div.icon {
+  @apply flex items-center justify-center object-contain w-7 h-full fill-grey;
+}
+
+.sidebar-btn--active {
+  @apply bg-gray-100  hover:bg-gray-200;
+}
+
+.icon--active {
+  @apply fill-blue-dark !important;
+}
+
+.sidebar-btn--active > .icon {
+  @apply fill-blue-dark;
+}
